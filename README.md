@@ -18,11 +18,11 @@
 
 - Clone repo:
 
-`PS> git clone https://github.com/xlmriosx/start-zero-ansible-awx.git`
+`PS> git clone https://github.com/xlmriosx/start-zero-awx.git`
 
 - Enter to directory
 
-`PS> cd start-zero-ansible-awx`
+`PS> cd start-zero-awx`
 
 - Aprovision virtual server
 
