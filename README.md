@@ -1,8 +1,8 @@
 # My specs
-S.O.: Windows11 V(23H2)
-MicroPrc: Ryzen5-1600-3.20GHz
-RAM: 16GB-3200MHz
-IDE: VSCode
+- S.O.: Windows11 V(23H2)
+- MicroPrc: Ryzen5-1600-3.20GHz
+- RAM: 16GB-3200MHz
+- IDE: VSCode
 
 # Pre-Requisites
 - VirtualBox. V(7.0.18)
@@ -42,8 +42,9 @@ IDE: VSCode
 
 - Once inside run, to check if pod is running
 
-`$ kubectl get all -n awx`
+`~$ kubectl get all -n awx`
 
 # Extra
 
-> If you lose the admin password can recover by enter in server and run: `kubectl get secret awx-admin-password -o jsonpath="{.data.password}" --namespace awx | base64 --decode`
+> If you lose the admin password can recover by enter in server and run: 
+`~$ kubectl get secret awx-admin-password -o jsonpath="{.data.password}" --namespace awx | base64 --decode`

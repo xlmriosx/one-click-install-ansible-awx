@@ -46,6 +46,6 @@ Vagrant.configure("2") do |config|
 
         # Show creds to access platform
         PASS=$(kubectl get secret awx-admin-password -o jsonpath="{.data.password}" --namespace awx | base64 --decode)
-        echo -e "\033[32mAccess to http://localhost:8080 with \nusername: admin \npassword: $PASS\033[0m"
+        echo -e "\033[32mAccess to http://localhost:8080 with \nUsername: admin \nPassword: $PASS\033[0m"
     SHELL
 end
