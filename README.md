@@ -1,18 +1,28 @@
-# Pre-Requisites
-- Virtual Box
-- 4 CPUs -- 8 Gb RAM
-- Vagrant downloaded
-- Run: `PS> vagrant plugin install vagrant-vbguest; vagrant plugin install vagrant-virtualbox_WSL2`
+# My specs
+S.O.: Windows11 V(23H2)
+MicroPrc: Ryzen5-1600-3.20GHz
+RAM: 16GB-3200MHz
+IDE: VSCode
 
-# Start
+# Pre-Requisites
+- VirtualBox. V(7.0.18)
+> Download: https://www.virtualbox.org/wiki/Downloads 
+
+- Vagrant. V(2.4.1)
+> Download: https://developer.hashicorp.com/vagrant/install?product_intent=vagrant
+
+- Vagrant plugins.
+> Run: `PS> vagrant plugin install vagrant-vbguest; vagrant plugin install vagrant-virtualbox_WSL2`
+
+# Instructions
 
 - Clone repo:
 
-`PS> git clone https://github.com/xlmriosx/jenkins-setup-kubernetes`
+`PS> git clone https://github.com/xlmriosx/start-zero-ansible-awx.git`
 
 - Enter to directory
 
-`PS> cd jenkins-setup-kubernetes`
+`PS> cd start-zero-ansible-awx`
 
 - Aprovision virtual server
 
@@ -20,20 +30,20 @@
 
 - Wait around 15 minutes
 
-- Search in your browser and look if jenkins is running
+- Search in your browser
 
-`localhost:8080`
+`http://localhost:8080`
 
-- To enter in the platform need connect to your virtual server
+# Inspect deploy
+
+- Enter in server
 
 `PS> vagrant ssh`
 
 - Once inside run, to check if pod is running
 
-`$ kubectl get all -n jenkins`
+`$ kubectl get all -n awx`
 
-- Search in the logs of pod the password
+# Extra
 
-`$ kubectl logs -n jenkins pod/<pod_id> | grep -A 3 password` E.g. 9bddff1cb32a4dc3a3b2a6b997be2bbc
-
-- Set that password in screen of jenkins and start installation
+> If you lose the admin password can recover by enter in server and run: `kubectl get secret awx-admin-password -o jsonpath="{.data.password}" --namespace awx | base64 --decode`
